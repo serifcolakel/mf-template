@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import "./index.css";
 
-export default App;
+import * as ReactDOMClient from "react-dom/client";
+
+import Button from "container/Button";
+console.log(Button)
+
+const App = () => (
+  <div className="max-w-6xl mx-auto mt-10 text-3xl text-blue-600">
+    <div>Name: remote</div>
+    <div>Framework: react</div>
+    <div>Language: TypeScript</div>
+    <div>CSS: Tailwind</div>
+    <Button />
+  </div>
+);
+
+const container = document.getElementById('app');
+const root = ReactDOMClient.createRoot(container!);
+
+root.render(<App />);

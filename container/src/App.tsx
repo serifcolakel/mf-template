@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import * as ReactDOMClient from "react-dom/client";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import "./index.css";
+const TestPage = React.lazy(() => import("remote/TestPage"));
 
-export default App;
+const App = () => (
+  <div className="max-w-6xl mx-auto mt-10 text-3xl text-red-600">
+    <div>Name: container</div>
+    <div>Framework: React</div>
+    <div>Language: TypeScript</div>
+    <div>CSS: Tailwind</div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <TestPage />
+    </Suspense>
+  </div>
+);
+
+const container = document.getElementById('app');
+const root = ReactDOMClient.createRoot(container!);
+
+root.render(<App />);
+
