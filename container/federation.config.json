@@ -1,0 +1,6 @@
+{
+  "name": "container",
+  "exposes": {
+    "./Button": "./src/components/Button.tsx"
+  }
+}

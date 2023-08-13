@@ -16,8 +16,7 @@ const App = () => (
   </div>
 );
 
-const container = document.getElementById('app');
+const container = document.getElementById("app");
 const root = ReactDOMClient.createRoot(container!);
 
 root.render(<App />);
-
