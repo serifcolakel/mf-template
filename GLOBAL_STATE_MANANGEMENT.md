@@ -1,4 +1,4 @@
-``[Project Repository](https://github.com/serifcolakel/mf-template)
+[Project Repository](https://github.com/serifcolakel/mf-template)
 
 🚨 This article based on [this](https://dev.to/serifcolakel/mastering-micro-frontends-creating-scalable-applications-with-react-webpack-5-and-typescript-type-safety-3l7j) article. I just added some extra features.
 
@@ -133,7 +133,7 @@ declare module "container/types/storeState" {
 
 🎉 Congratulations! You have successfully generated types for the store state. After copy to the  `container.d.ts` file in `remote` application.
 
-## Creating Hooks for Store
+## Creating Hooks for Store
 
 In this section we will create a custom hook to access the store and dispatch actions. Create a file called `useStore.ts` in the `src/hooks` folder. You can run the following command in the terminal to create the file:
 
@@ -197,7 +197,7 @@ import { RootState } from "../store";
 export const useStoreSelector: TypedUseSelectorHook<RootState> = useSelector;
 ```
 
-## Creating a Store Provider
+## Creating a Store Provider
 
 In this section we will create a store provider component to wrap the application with. Create a file called `StoreProvider.tsx` in the `src/providers` folder. You can run the following command in the terminal to create the file:
 
@@ -217,7 +217,7 @@ export default function ReduxProvider({ children }: PropsWithChildren) {
 }
 ```
 
-## Wrapping the App with the Store Provider
+## Wrapping the App with the Store Provider
 
 In this section we will wrap the application with the store provider. Open the `src/index.tsx` file and wrap the `App` component with the `StoreProvider` component and it should look like the following:
 
@@ -251,7 +251,7 @@ root.render(
 );
 ```
 
-## Export the Store, Store Selector and Store Provider in webpack
+## Export the Store, Store Selector and Store Provider in webpack
 
 In this section we will export the store, store selector and store provider in webpack. Open the `webpack.config.js` file and add the following code to the `exposes` object:
 
@@ -359,7 +359,7 @@ module.exports = (env, argv) => {
 
 🎉 Congratulations! You have successfully configured Redux in your application.
 
-## Next Step is to use the store in the remote application
+## Next Step is to use the store in the remote application
 
 In this section we will use the store in the remote application.
 
@@ -444,7 +444,7 @@ root.render(
 );
 ```
 
-## Use the store in the remote application
+## Use the store in the remote application
 
 In this section we will use the store in the remote application. Open the `src/pages/test/index.tsx` file and add the following code:
 
@@ -672,7 +672,7 @@ export default function useStore() {
 
 🎉 Congratulations! You have successfully added getAllProduct thunk in your application. Let's invoke the function on remote application.
 
-## Invoke the getAllProduct thunk in the remote application
+## Invoke the getAllProduct thunk in the remote application
 
 In this section we will invoke the `getAllProduct` thunk in the remote application.
 
@@ -864,7 +864,7 @@ export default function TestPage() {
 }
 ```
 
-## Run the Container & Remote Application
+## Run the Container & Remote Application
 
 In this section we will run the application. Open the terminal and run the following command:
 
@@ -875,7 +875,7 @@ cd remote && npm run start
 
 🎉 Congratulations! You have successfully configured Redux in your application.
 
-## Conclusion
+## Conclusion
 
 **Redux and Redux Toolkit Installation**: You started by installing Redux and Redux Toolkit using the provided npm command.
 
