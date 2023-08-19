@@ -19,30 +19,29 @@ const configs = {
 const deps = require("./package.json").dependencies;
 
 module.exports = (env, argv) => {
-
   console.log({ env, argv, configs: configs[argv.mode] });
 
   return {
     output: {
       publicPath: configs[argv.mode].PUBLIC_PATH,
     },
-  
+
     resolve: {
       extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
     },
-  
+
     devServer: {
       hot: true,
       port: configs[argv.mode].PORT,
       historyApiFallback: true,
-      allowedHosts: 'all',
+      allowedHosts: "all",
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers':
-          'Origin, X-Requested-With, Content-Type, Accept',
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept",
       },
     },
-  
+
     module: {
       rules: [
         {
@@ -65,7 +64,7 @@ module.exports = (env, argv) => {
         },
       ],
     },
-  
+
     plugins: [
       new ModuleFederationPlugin({
         name: configs.appName,
@@ -74,7 +73,10 @@ module.exports = (env, argv) => {
           remote: configs[argv.mode].REMOTE_PATH,
         },
         exposes: {
-          './Button': './src/components/Button.tsx',
+          "./Button": "./src/components/Button.tsx",
+          "./hooks/useStore": "./src/hooks/useStore.ts",
+          "./hooks/useStoreSelector": "./src/hooks/useStoreSelector.ts",
+          "./providers/StoreProvider": "./src/providers/StoreProvider.tsx",
         },
         shared: {
           ...deps,
