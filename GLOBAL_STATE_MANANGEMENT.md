@@ -1,14 +1,14 @@
-(Project Repository)[https://github.com/serifcolakel/mf-template]
+``[Project Repository](https://github.com/serifcolakel/mf-template)
 
-🚨 This article based on (this)[https://dev.to/serifcolakel/mastering-micro-frontends-creating-scalable-applications-with-react-webpack-5-and-typescript-type-safety-3l7j] article. I just added some extra features.
+🚨 This article based on [this](https://dev.to/serifcolakel/mastering-micro-frontends-creating-scalable-applications-with-react-webpack-5-and-typescript-type-safety-3l7j) article. I just added some extra features.
 
-(Author)[https://dev.to/serifcolakel]
+[Author](https://dev.to/serifcolakel)
 
 In today's rapidly evolving world of web development, embracing micro front-end architecture has become a strategic imperative. This article presents a comprehensive guide that navigates through the intricate landscape of micro front-ends, demonstrating how to seamlessly integrate Redux and Redux Toolkit to efficiently manage global states. As we delve into the heart of this guide, you'll embark on a journey to streamline your development process, centralize state management, and amplify user experiences. By the end, you'll possess the knowledge to effectively reshape your architecture, yielding applications that are not only modular and scalable but also infused with the power of Redux-driven state management.
 
 ## ReduxToolkit and React-Redux installation
 
-In this section we will install redux and react-redux. Run the following command in the terminal: (reference)[https://redux-toolkit.js.org/tutorials/intermediate-tutorial#installing-redux-toolkit-and-react-redux]
+In this section we will install redux and react-redux. Run the following command in the terminal: [reference](https://redux-toolkit.js.org/tutorials/intermediate-tutorial#installing-redux-toolkit-and-react-redux)
 
 ```bash
 npm install @reduxjs/toolkit react-redux
@@ -22,7 +22,7 @@ npm install @reduxjs/toolkit react-redux
 mkdir src/store && touch src/store/index.ts
 ```
 
-- Copy the following code into the `index.ts` file (reference)[https://redux-toolkit.js.org/tutorials/intermediate-tutorial#creating-the-store]:
+- Copy the following code into the `index.ts` file [reference](https://redux-toolkit.js.org/tutorials/intermediate-tutorial#creating-the-store):
 
 ```ts
 import { configureStore } from "@reduxjs/toolkit";
@@ -535,7 +535,7 @@ export const getProductList = async (): Promise<ProductListResponse> => {
 };
 ```
 
-- Add the `ProductItem` & ` ProducState`` type in the  `src/types/storeState` file and it should look like the following:
+- Add the `ProductItem` & `ProducState` type in the `src/types/storeState` file and it should look like the following:
 
 ```ts
 // INFO (serif) : Product State Types
