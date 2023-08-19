@@ -5,7 +5,8 @@ import "./index.css";
 import * as ReactDOMClient from "react-dom/client";
 
 import Button from "container/Button";
-console.log(Button)
+import StoreProvider from "container/providers/StoreProvider";
+console.log(Button);
 
 const App = () => (
   <div className="max-w-6xl mx-auto mt-10 text-3xl text-blue-600">
@@ -17,7 +18,11 @@ const App = () => (
   </div>
 );
 
-const container = document.getElementById('app');
+const container = document.getElementById("app");
 const root = ReactDOMClient.createRoot(container!);
 
-root.render(<App />);
+root.render(
+  <StoreProvider>
+    <App />
+  </StoreProvider>
+);
